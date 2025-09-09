@@ -43,20 +43,25 @@ src/
  ├── validators/    # Schemas de validação (Zod/Joi/Yup)
  ├── errors.js      # Tratamento de erros
  └── index.js       # Ponto de entrada do servidor
+```
 
-⚙️ Configuração
+---
+
+## ⚙️ Configuração
 
 Clone este repositório:
 
+```bash
 git clone https://github.com/seuusuario/node-jwt-api.git
 
 Instale as dependências:
 
 npm install
-
+```
 
 Crie um arquivo .env na raiz do projeto:
 
+```bash
 # Servidor
 PORT=3000
 
@@ -71,11 +76,14 @@ REFRESH_TOKEN_TTL=7d
 
 # Bcrypt
 BCRYPT_SALT_ROUNDS=10
+```
 
 
 Inicie o servidor:
 
+```bash
 npm run dev
+```
 
 
 O servidor estará rodando em:
@@ -87,40 +95,42 @@ O servidor estará rodando em:
 
 📌 Registrar usuário
 POST /auth/register
-Body (JSON):
 
+Body (JSON):
+```bash
 {
   "name": "João da Silva",
   "email": "joao@example.com",
   "password": "12345678"
 }
-
+```
 
 📌 Login
 POST /auth/login
 Body (JSON):
-
+```bash
 {
   "email": "joao@example.com",
   "password": "12345678"
 }
-
+```
 
 Resposta:
-
+```bash
 {
   "accessToken": "jwt-token",
   "refreshToken": "jwt-refresh-token"
 }
-
+```
 
 📌 Refresh Token
 POST /auth/refresh
 Body (JSON):
-
+```bash
 {
   "refreshToken": "jwt-refresh-token"
 }
+```
 
 2. TODOs (protegidas por autenticação)
 
@@ -128,12 +138,12 @@ Necessário enviar Authorization: Bearer <accessToken> no header.
 
 📌 Criar tarefa
 POST /todos
-
+```bash
 {
   "title": "Estudar Node.js",
   "description": "Praticar autenticação com JWT"
 }
-
+```
 
 📌 Listar tarefas
 GET /todos
@@ -143,12 +153,13 @@ GET /todos/:id
 
 📌 Atualizar tarefa
 PUT /todos/:id
-
+```bash
+{
 {
   "title": "Estudar MongoDB",
   "description": "Revisar Mongoose"
 }
-
+```
 
 📌 Deletar tarefa
 DELETE /todos/:id
