@@ -21,14 +21,15 @@ API de autenticação e gerenciamento de tarefas (TODOs) construída com **Node.
 ## 📂 Estrutura do Projeto
 
 src/
-├── config/ # Configuração do banco (db.js)
-├── controllers/ # Lógica das rotas
-├── middlewares/ # Middlewares (auth, validate)
-├── models/ # Modelos do Mongoose
-├── routes/ # Definição das rotas
-├── validators/ # Schemas de validação com Joi
-├── errors.js # Tratamento de erros
-└── index.js # Ponto de entrada do servidor
+ ├── config/        # Configuração do banco (db.js)
+ ├── controllers/   # Lógica das rotas
+ ├── middlewares/   # Middlewares (auth, validate)
+ ├── models/        # Modelos do Mongoose
+ ├── routes/        # Definição das rotas
+ ├── validators/    # Schemas de validação (Zod/Joi/Yup)
+ ├── errors.js      # Tratamento de erros
+ └── index.js       # Ponto de entrada do servidor
+
 
 
 ---
