@@ -1,5 +1,18 @@
-## Matheus Beiruth
+<p align="center">
+  <img src="assets/logo-vassouras.png" alt="Universidade de Vassouras" width="400"/>
+</p>
 
+<h3 align="center">
+  Universidade de Vassouras  
+</h3>
+
+---
+
+### 📚 Curso: **Engenharia de Software**  
+### 🖥️ Disciplina: **Laboratório de Desenvolvimento de Aplicativos Nativos**  
+### 👨‍🎓 Autor: **Matheus Beiruth**
+
+---
 
 # 📌 Node JWT API
 
@@ -13,13 +26,14 @@ API de autenticação e gerenciamento de tarefas (TODOs) construída com **Node.
 - MongoDB (Mongoose)
 - JWT (JSON Web Token)
 - Bcrypt (hash de senhas)
-- Joi (validação de dados)
+- Joi/Zod (validação de dados)
 - Dotenv (variáveis de ambiente)
 
 ---
 
 ## 📂 Estrutura do Projeto
 
+```bash
 src/
  ├── config/        # Configuração do banco (db.js)
  ├── controllers/   # Lógica das rotas
@@ -30,21 +44,19 @@ src/
  ├── errors.js      # Tratamento de erros
  └── index.js       # Ponto de entrada do servidor
 
+⚙️ Configuração
+
+Clone este repositório:
+
+git clone https://github.com/seuusuario/node-jwt-api.git
+
+Instale as dependências:
+
+npm install
 
 
----
+Crie um arquivo .env na raiz do projeto:
 
-## ⚙️ Configuração
-
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/seuusuario/node-jwt-api.git
-
-
-2. Instale as dependências:
-    npm install
-
-3. Crie um arquivo .env na raiz do projeto:
 # Servidor
 PORT=3000
 
@@ -60,41 +72,52 @@ REFRESH_TOKEN_TTL=7d
 # Bcrypt
 BCRYPT_SALT_ROUNDS=10
 
-4. Inicie o servidor:
-    npm run dev
-    Servidor rodará em:
-👉  http://localhost:3000
+
+Inicie o servidor:
+
+npm run dev
+
+
+O servidor estará rodando em:
+👉 http://localhost:3000
 
 
 🔑 Rotas da API
-
 1. Autenticação
 
 📌 Registrar usuário
 POST /auth/register
 Body (JSON):
+
 {
   "name": "João da Silva",
   "email": "joao@example.com",
-  "password": "123456"
+  "password": "12345678"
 }
+
 
 📌 Login
 POST /auth/login
 Body (JSON):
+
 {
   "email": "joao@example.com",
-  "password": "123456"
+  "password": "12345678"
 }
+
+
 Resposta:
+
 {
   "accessToken": "jwt-token",
   "refreshToken": "jwt-refresh-token"
 }
 
+
 📌 Refresh Token
 POST /auth/refresh
 Body (JSON):
+
 {
   "refreshToken": "jwt-refresh-token"
 }
@@ -103,42 +126,45 @@ Body (JSON):
 
 Necessário enviar Authorization: Bearer <accessToken> no header.
 
-Criar tarefa
+📌 Criar tarefa
 POST /todos
+
 {
   "title": "Estudar Node.js",
   "description": "Praticar autenticação com JWT"
 }
 
-Listar tarefas
+
+📌 Listar tarefas
 GET /todos
 
-Buscar tarefa pro ID
+📌 Buscar tarefa por ID
 GET /todos/:id
 
-
-Atualizar tarefa
+📌 Atualizar tarefa
 PUT /todos/:id
+
 {
   "title": "Estudar MongoDB",
   "description": "Revisar Mongoose"
 }
 
 
-Deletar tarefa
+📌 Deletar tarefa
 DELETE /todos/:id
-
 
 🧪 Testando no Postman
 
-1. Registre um usuário em POST /auth/register.
+Registre um usuário em POST /auth/register.
 
-2. Faça login em POST /auth/login e copie o accessToken.
+Faça login em POST /auth/login e copie o accessToken.
 
-3. Em qualquer rota de /todos, adicione no Header: Authorization: Bearer seuAccessTokenAqui
+Em qualquer rota de /todos, adicione no Header:
 
-4. Teste as operações de CRUD.
+Authorization: Bearer seuAccessTokenAqui
 
+
+Teste todas as operações de CRUD.
 
 📜 Licença
 
